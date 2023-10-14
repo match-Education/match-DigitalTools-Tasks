@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            "task_1a_node = match_dt_task_1.task_1a:main"
         ],
     },
 )
