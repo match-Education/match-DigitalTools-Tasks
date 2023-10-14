@@ -12,7 +12,7 @@ def main(args = None):
     #############################################################################################
     # Start of student code section
 
-    task_1a_node.get_logger().info("test")
+    task_1a_node.get_logger().info("Task 1a node was started.")
     
     # End of student code section
     #############################################################################################
