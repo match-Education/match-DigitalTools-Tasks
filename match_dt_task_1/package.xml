@@ -15,6 +15,8 @@
   <depend>dt_gazebo</depend>
   <depend>dt_robot_bringup</depend>
 
+  <depend>geometry_msgs</depend>
+
   <export>
     <build_type>ament_python</build_type>
   </export>
