@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
+from time import sleep
+
 import rclpy
 from rclpy.node import Node
+
+#############################################################################################
+# Start of student code section
+
+
+
+# End of student code section
+#############################################################################################
 
 def main(args = None):
     # Initialize ROS2 node and ROS2 communication (e.g. topics)
@@ -9,10 +19,13 @@ def main(args = None):
     # Create ROS2 Node. This is used to create for example a topic publisher.
     task_1a_node = Node("task_1a")  
 
+    # Initial sleep to wait for everything to boot properly.
+    sleep(8)
+
     #############################################################################################
     # Start of student code section
 
-    task_1a_node.get_logger().info("Task 1a node was started.")
+
     
     # End of student code section
     #############################################################################################
