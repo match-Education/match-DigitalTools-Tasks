@@ -4,6 +4,7 @@ from time import sleep
 import rclpy
 from rclpy.node import Node
 
+
 #############################################################################################
 # Start of student code section
 
@@ -25,7 +26,7 @@ def main(args = None):
     #############################################################################################
     # Start of student code section
 
-    task_1a_node.get_logger().info("Task 1a node started.")
+
     
     # End of student code section
     #############################################################################################

@@ -25,7 +25,7 @@ def main(args = None):
     #############################################################################################
     # Start of student code section
 
-    task_1b_node.get_logger().info("Task 1b node started.")
+    
     
     # End of student code section
     #############################################################################################

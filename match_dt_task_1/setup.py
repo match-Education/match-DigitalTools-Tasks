@@ -26,7 +26,8 @@ setup(
             "task_1b_node = match_dt_task_1.task_1b:main",
             "task_1c_node = match_dt_task_1.task_1c:main",
             "task_1d_node = match_dt_task_1.task_1d:main",
-            "task_1e_node = match_dt_task_1.task_1e:main"
+            "task_1e_node = match_dt_task_1.task_1e:main",
+            "task_1f_node = match_dt_task_1.task_1f:main"
         ],
     },
 )
