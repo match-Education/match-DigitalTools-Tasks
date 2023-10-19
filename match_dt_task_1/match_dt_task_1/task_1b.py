@@ -20,12 +20,12 @@ def main(args = None):
     task_1b_node = Node("task_1b")  
 
     # Initial sleep to wait for everything to boot properly.
-    sleep(8)
+    sleep(10)
 
     #############################################################################################
     # Start of student code section
 
-
+    task_1b_node.get_logger().info("Task 1b node started.")
     
     # End of student code section
     #############################################################################################
