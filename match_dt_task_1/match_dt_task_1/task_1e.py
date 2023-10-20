@@ -5,11 +5,19 @@ import rclpy
 from rclpy.node import Node
 
 #############################################################################################
-# Start of student code section
+# Start of student import section
 
 
 
-# End of student code section
+# End of student import section
+#############################################################################################
+
+#############################################################################################
+# Start of student function section
+
+
+
+# End of student function section
 #############################################################################################
 
 def main(args = None):
