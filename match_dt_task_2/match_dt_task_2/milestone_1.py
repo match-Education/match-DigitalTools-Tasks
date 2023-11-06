@@ -35,7 +35,6 @@ def main(args = None):
     #############################################################################################
     # Start of student code section
 
-    milestone_1_node.get_logger().info("milestone_1_node node is started.")
 
     
     # End of student code section
