@@ -29,7 +29,8 @@ setup(
             "task_3e_node = match_dt_task_3.task_3e:main",
             "task_3f_node = match_dt_task_3.task_3f:main",
             "task_3g_node = match_dt_task_3.task_3g:main",
-            "task_3h_node = match_dt_task_3.task_3h:main"
+            "task_3h_node = match_dt_task_3.task_3h:main",
+            "milestone_3_node = match_dt_task_3.milestone_3:main"
         ],
     },
 )
