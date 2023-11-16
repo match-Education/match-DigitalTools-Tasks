@@ -13,14 +13,14 @@ from rclpy.node import Node
 #############################################################################################
 
 #############################################################################################
-# Start of student code section
+# Start of student class section
 class Task3cNode(Node):
     def __init__(self) -> None:
         super().__init__('task_3c')
 
 
 
-# End of student function section
+# End of student class section
 #############################################################################################
 
 def main(args = None):
