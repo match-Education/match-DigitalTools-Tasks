@@ -35,7 +35,10 @@ def generate_launch_description():
                     "rosbot_2_sim.launch.py",
                 ]
             )
-        )
+        ),
+        launch_arguments={
+            "activate_obstacle_detection": str(True)
+        }.items(),
     )
 
     task_3b_node = Node(
