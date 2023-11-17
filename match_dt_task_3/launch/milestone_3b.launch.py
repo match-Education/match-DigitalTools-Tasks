@@ -22,7 +22,7 @@ def generate_launch_description():
                 [
                     get_package_share_directory("dt_gazebo"),
                     "launch",
-                    "match_blocked_world.launch.py"
+                    "match_right_turn_world.launch.py"
                 ]
             )
         )
@@ -39,7 +39,8 @@ def generate_launch_description():
             )
         ),
         launch_arguments={
-            "Y": str((random() * 2 * pi) - pi)
+            "Y": str((random() * 2 * pi) - pi),
+            "activate_obstacle_detection": str(True)
         }.items(),
     )
 
