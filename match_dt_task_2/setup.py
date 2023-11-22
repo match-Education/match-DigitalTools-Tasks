@@ -31,7 +31,7 @@ setup(
             "task_2g_node = match_dt_task_2.task_2g:main",
             "task_2h_node = match_dt_task_2.task_2h:main",
             "task_2i_node = match_dt_task_2.task_2i:main",
-            "milestone_1_node = match_dt_task_2.milestone_1:main"
+            "milestone_2_node = match_dt_task_2.milestone_2:main"
         ],
     },
 )

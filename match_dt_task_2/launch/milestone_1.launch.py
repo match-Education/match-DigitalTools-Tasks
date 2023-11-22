@@ -38,10 +38,10 @@ def generate_launch_description():
         )
     )
 
-    milestone_1_node = Node(
+    milestone_2_node = Node(
         package="match_dt_task_2",
-        executable="milestone_1_node",
-        name="milestone_1_node",
+        executable="milestone_2_node",
+        name="milestone_2_node",
         output="screen"
     )
 
@@ -49,6 +49,6 @@ def generate_launch_description():
         [
             gz_sim,
             rosbot2_sim,
-            milestone_1_node
+            milestone_2_node
         ]
     )
