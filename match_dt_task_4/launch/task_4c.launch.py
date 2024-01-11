@@ -31,19 +31,19 @@ def generate_launch_description():
     side_selector: int = randint(0,3)
     x_position: float = 0.0
     y_position: float = 0.0
-    if side_selector == 0:
-        x_position = -1
-        y_position = random() * 2.0 - 1.0
-    elif side_selector == 1:
-        x_position = random() * 2.0 - 1.0
-        y_position = 1
-    elif side_selector == 2:
-        x_position = 1
-        y_position = random() * 2.0 - 1.0
-    elif side_selector == 3:
+    if side_selector == 0: # back
         # The gap is on the left side. 
         # Therefore only pick a random spot on the right side of the back wall
-        x_position = random() * 1.0 - 1.0 
+        x_position = -1
+        y_position = -random() * 0.8 - 0.2 # Only choose the wall a little away from the gap
+    elif side_selector == 1: # left
+        x_position = random() * 1.5 - 0.5 # Prevent close spawning to the gap
+        y_position = 1
+    elif side_selector == 2: # front
+        x_position = 1
+        y_position = random() * 2.0 - 1.0
+    elif side_selector == 3: # right
+        x_position = random() * 2.0 - 1.0
         y_position = -1
 
     rosbot2_sim = IncludeLaunchDescription(

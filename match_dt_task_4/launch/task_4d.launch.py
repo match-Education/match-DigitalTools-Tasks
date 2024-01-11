@@ -41,7 +41,7 @@ def generate_launch_description():
         launch_arguments={
             "x": str(0.5 * random()),
             "y": str(0.5 * random()),
-            "Y": str(random()*(2*pi)),
+            "Y": str((random()*((4/3)*pi)) - (4/3)*pi/2),
             "activate_obstacle_detection": str(True)
         }.items(),
     )
