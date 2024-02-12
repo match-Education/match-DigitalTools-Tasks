@@ -3,7 +3,6 @@ from time import sleep
 
 import rclpy
 from rclpy.node import Node
-from rclpy.clock import Clock
 
 #############################################################################################
 # Start of student import section
