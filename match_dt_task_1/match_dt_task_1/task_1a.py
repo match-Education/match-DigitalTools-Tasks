@@ -7,7 +7,7 @@ from rclpy.node import Node
 #############################################################################################
 # Start of student import section
 
-
+from geometry_msgs.msg import Twist
 
 # End of student import section
 #############################################################################################
@@ -27,13 +27,18 @@ def main(args = None):
     # Create ROS2 Node. This is used to create for example a topic publisher.
     task_1a_node = Node("task_1a")  
 
-    # Initial sleep to wait for everything to boot properly.
-    sleep(10)
-
     #############################################################################################
     # Start of student code section
 
-    
+    task_1a_node.get_logger().info("Solution 1a node started.")
+
+    cmd_vel_publisher = task_1a_node.create_publisher(Twist, '/cmd_vel', 10)
+
+    constant_velocity: Twist = Twist()
+    constant_velocity.linear.x = 1.0
+    cmd_vel_publisher.publish(constant_velocity)
+
+    task_1a_node.get_logger().info("Solution 1a node finished.")   
     
     # End of student code section
     #############################################################################################

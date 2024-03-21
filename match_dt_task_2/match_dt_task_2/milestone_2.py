@@ -29,9 +29,6 @@ def main(args = None):
 
     milestone_1_node: Milestone1Node = Milestone1Node()
 
-    # Initial sleep to wait for everything to boot properly.
-    sleep(10)
-
     #############################################################################################
     # Start of student code section
 

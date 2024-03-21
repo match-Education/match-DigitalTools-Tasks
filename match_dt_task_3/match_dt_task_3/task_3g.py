@@ -29,9 +29,6 @@ def main(args = None):
 
     task_3g_node: Task3gNode = Task3gNode()
 
-    # Initial sleep to wait for everything to boot properly.
-    sleep(10)
-
     #############################################################################################
     # Start of student code section
     

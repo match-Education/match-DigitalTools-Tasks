@@ -29,9 +29,6 @@ def main(args = None):
 
     task_4b_node: Task4bNode = Task4bNode()
 
-    # Initial sleep to wait for everything to boot properly.
-    sleep(10)
-
     #############################################################################################
     # Start of student code section
     

@@ -29,9 +29,6 @@ def main(args = None):
 
     task_2b_node: Task2bNode = Task2bNode()
 
-    # Initial sleep to wait for everything to boot properly.
-    sleep(10)
-
     #############################################################################################
     # Start of student code section
 

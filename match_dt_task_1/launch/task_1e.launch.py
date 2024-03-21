@@ -3,6 +3,7 @@ from launch import LaunchDescription
 
 from launch.actions import (
     IncludeLaunchDescription,
+    TimerAction
 )
 
 from launch.substitutions import (
@@ -38,17 +39,19 @@ def generate_launch_description():
         )
     )
 
-    task_1a_node = Node(
+    task_1e_node = Node(
         package="match_dt_task_1",
         executable="task_1e_node",
         name="task_1e_node",
         output="screen"
     )
+    task_1e_node_delayed = TimerAction(period=12.0,
+                                        actions=[task_1e_node])
 
     return LaunchDescription(
         [
             gz_sim,
             rosbot2_sim,
-            task_1a_node
+            task_1e_node_delayed
         ]
     )

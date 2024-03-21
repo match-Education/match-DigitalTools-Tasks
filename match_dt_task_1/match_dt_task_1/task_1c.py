@@ -27,14 +27,11 @@ def main(args = None):
     # Create ROS2 Node. This is used to create for example a topic publisher.
     task_1c_node = Node("task_1c")  
 
-    # Initial sleep to wait for everything to boot properly.
-    sleep(10)
-
     #############################################################################################
     # Start of student code section
+    
 
-    
-    
+
     # End of student code section
     #############################################################################################
     
