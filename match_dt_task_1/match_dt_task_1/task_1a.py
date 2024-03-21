@@ -30,15 +30,7 @@ def main(args = None):
     #############################################################################################
     # Start of student code section
 
-    task_1a_node.get_logger().info("Solution 1a node started.")
-
-    cmd_vel_publisher = task_1a_node.create_publisher(Twist, '/cmd_vel', 10)
-
-    constant_velocity: Twist = Twist()
-    constant_velocity.linear.x = 1.0
-    cmd_vel_publisher.publish(constant_velocity)
-
-    task_1a_node.get_logger().info("Solution 1a node finished.")   
+    
     
     # End of student code section
     #############################################################################################
