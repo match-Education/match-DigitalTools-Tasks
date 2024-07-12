@@ -39,9 +39,9 @@ def generate_launch_description():
             )
         ),
         launch_arguments={
-            "x": str(0.0),
-            "y": str(0.0),
-            "yaw": str(0.0),
+            "x": TextSubstitution(text=str(0.0)),
+            "y": TextSubstitution(text=str(0.0)),
+            "Y": TextSubstitution(text=str(0.0)),
         }.items()
     )
 

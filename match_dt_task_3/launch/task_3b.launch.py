@@ -8,18 +8,19 @@ from launch.actions import (
 
 from launch.substitutions import (
     PathJoinSubstitution,
+    TextSubstitution
 )
+from launch_ros.substitutions import FindPackageShare
 
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
-from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution(
                 [
-                    get_package_share_directory("dt_gazebo"),
+                    FindPackageShare("dt_gazebo"),
                     "launch",
                     "match_blocked_world.launch.py"
                 ]
@@ -31,15 +32,17 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             PathJoinSubstitution(
                 [
-                    get_package_share_directory("dt_robot_bringup"),
+                    FindPackageShare("dt_robot_bringup"),
                     "launch",
                     "rosbot_2_sim.launch.py",
                 ]
             )
         ),
         launch_arguments={
-            "activate_obstacle_detection": str(True)
-        }.items(),
+            "x": TextSubstitution(text=str(0.0)),
+            "y": TextSubstitution(text=str(0.0)),
+            "Y": TextSubstitution(text=str(0.0)),
+        }.items()
     )
 
     task_3b_node = Node(
