@@ -11,12 +11,13 @@ from launch.actions import (
 
 from launch.substitutions import (
     PathJoinSubstitution,
-    LaunchConfiguration
+    LaunchConfiguration,
+    TextSubstitution
 )
+from launch_ros.substitutions import FindPackageShare
 
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
-from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     x = LaunchConfiguration("x")
@@ -44,7 +45,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             PathJoinSubstitution(
                 [
-                    get_package_share_directory("dt_gazebo"),
+                    FindPackageShare("dt_gazebo"),
                     "launch",
                     "match_labyrinth_a_world.launch.py"
                 ]
@@ -56,23 +57,18 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             PathJoinSubstitution(
                 [
-                    get_package_share_directory("dt_robot_bringup"),
+                    FindPackageShare("dt_robot_bringup"),
                     "launch",
                     "rosbot_2_sim.launch.py",
                 ]
             )
         ),
         launch_arguments={
-            "x": str(0.5),
-            "y": str(-0.5), 
-            "Y": str((random()*((4/3)*pi)) + (1/4)*pi),
-            "activate_obstacle_detection": str(True)
-        }.items(),
+            "x": TextSubstitution(text=str(0.5)),
+            "y": TextSubstitution(text=str(-0.5)),
+            "Y": TextSubstitution(text=str((random()*((4/3)*pi)) + (1/4)*pi)),
+        }.items()
     )
-
-    # launch_arguments={
-    #     "x": x
-    # }.items(),
 
     milestone_4_node = Node(
         package="match_dt_task_4",

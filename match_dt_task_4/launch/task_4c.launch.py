@@ -10,18 +10,19 @@ from launch.actions import (
 
 from launch.substitutions import (
     PathJoinSubstitution,
+    TextSubstitution
 )
+from launch_ros.substitutions import FindPackageShare
 
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
-from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution(
                 [
-                    get_package_share_directory("dt_gazebo"),
+                    FindPackageShare("dt_gazebo"),
                     "launch",
                     "match_room_with_gap_world.launch.py"
                 ]
@@ -51,18 +52,17 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             PathJoinSubstitution(
                 [
-                    get_package_share_directory("dt_robot_bringup"),
+                    FindPackageShare("dt_robot_bringup"),
                     "launch",
                     "rosbot_2_sim.launch.py",
                 ]
             )
         ),
         launch_arguments={
-            "x": str(x_position),
-            "y": str(y_position),
-            "Y": str(random()*(2*pi)),
-            "activate_obstacle_detection": str(True)
-        }.items(),
+            "x": TextSubstitution(text=str(x_position)),
+            "y": TextSubstitution(text=str(y_position)),
+            "Y": TextSubstitution(text=str(random()*(2*pi))),
+        }.items()
     )
 
     task_4c_node = Node(
