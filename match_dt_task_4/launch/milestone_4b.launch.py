@@ -5,11 +5,13 @@ from launch import LaunchDescription
 
 from launch.actions import (
     IncludeLaunchDescription,
+    DeclareLaunchArgument,
     TimerAction
 )
 
 from launch.substitutions import (
     PathJoinSubstitution,
+    LaunchConfiguration,
     TextSubstitution
 )
 from launch_ros.substitutions import FindPackageShare
@@ -18,6 +20,27 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 
 def generate_launch_description():
+    x = LaunchConfiguration("x")
+    declare_x_arg = DeclareLaunchArgument(
+        "x",
+        default_value=TextSubstitution(text=str(0.5)),
+        description="x-position of the mobile robot.",
+    )
+
+    y = LaunchConfiguration("y")
+    declare_y_arg = DeclareLaunchArgument(
+        "y",
+        default_value=TextSubstitution(text=str(-2.8)),
+        description="y-position of the mobile robot.",
+    )
+
+    yaw = LaunchConfiguration("yaw")
+    declare_yaw_arg = DeclareLaunchArgument(
+        "yaw",
+        default_value=TextSubstitution(text=str((random()*((4/3)*pi)) - (5/4)*pi)),
+        description="yaw-orientation of the mobile robot.",
+    )
+    
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution(
@@ -41,9 +64,9 @@ def generate_launch_description():
             )
         ),
         launch_arguments={
-            "x": TextSubstitution(text=str(0.5)),
-            "y": TextSubstitution(text=str(-2.8)),
-            "Y": TextSubstitution(text=str((random()*((4/3)*pi)) - (5/4)*pi)),
+            "x": x,
+            "y": y,
+            "Y": yaw,
         }.items()
     )
 
@@ -58,6 +81,9 @@ def generate_launch_description():
     
     return LaunchDescription(
         [
+            declare_x_arg,
+            declare_y_arg,
+            declare_yaw_arg,
             gz_sim,
             rosbot2_sim,
             milestone_4_node_delayed

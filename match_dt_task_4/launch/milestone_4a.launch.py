@@ -23,21 +23,21 @@ def generate_launch_description():
     x = LaunchConfiguration("x")
     declare_x_arg = DeclareLaunchArgument(
         "x",
-        default_value="0.0",
+        default_value=TextSubstitution(0.5),
         description="x-position of the mobile robot.",
     )
 
     y = LaunchConfiguration("y")
     declare_y_arg = DeclareLaunchArgument(
         "y",
-        default_value="0.0",
+        default_value=TextSubstitution(-0.5),
         description="y-position of the mobile robot.",
     )
 
     yaw = LaunchConfiguration("yaw")
     declare_yaw_arg = DeclareLaunchArgument(
         "yaw",
-        default_value="0.0",
+        default_value=TextSubstitution(text=str((random()*((4/3)*pi)) + (1/4)*pi)),
         description="yaw-orientation of the mobile robot.",
     )
 
@@ -64,9 +64,9 @@ def generate_launch_description():
             )
         ),
         launch_arguments={
-            "x": TextSubstitution(text=str(0.5)),
-            "y": TextSubstitution(text=str(-0.5)),
-            "Y": TextSubstitution(text=str((random()*((4/3)*pi)) + (1/4)*pi)),
+            "x": x,
+            "y": y,
+            "Y": yaw,
         }.items()
     )
 
