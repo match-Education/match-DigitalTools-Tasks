@@ -23,14 +23,14 @@ def generate_launch_description():
     x = LaunchConfiguration("x")
     declare_x_arg = DeclareLaunchArgument(
         "x",
-        default_value=TextSubstitution(0.5),
+        default_value=TextSubstitution(text=str(0.5)),
         description="x-position of the mobile robot.",
     )
 
     y = LaunchConfiguration("y")
     declare_y_arg = DeclareLaunchArgument(
         "y",
-        default_value=TextSubstitution(-0.5),
+        default_value=TextSubstitution(text=str(-0.5)),
         description="y-position of the mobile robot.",
     )
 
