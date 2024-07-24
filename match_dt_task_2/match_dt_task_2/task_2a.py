@@ -29,6 +29,9 @@ def main(args = None):
 
     task_2a_node: Task2aNode = Task2aNode()
 
+    # Publisher will only be called once. It needs time to be ready.
+    sleep(1)
+
     #############################################################################################
     # Start of student code section
 

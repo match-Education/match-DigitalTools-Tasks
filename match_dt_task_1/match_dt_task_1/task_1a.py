@@ -27,6 +27,9 @@ def main(args = None):
     # Create ROS2 Node. This is used to create for example a topic publisher.
     task_1a_node = Node("task_1a")  
 
+    # Publisher will only be called once. It needs time to be ready.
+    sleep(1)
+
     #############################################################################################
     # Start of student code section
 
