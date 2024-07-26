@@ -14,7 +14,7 @@ from rclpy.node import Node
 
 #############################################################################################
 # Start of student class section
-class Milestone1Node(Node):
+class Milestone2Node(Node):
     def __init__(self) -> None:
         super().__init__('milestone_1')
 
@@ -27,7 +27,7 @@ def main(args = None):
     # Initialize ROS2 node and ROS2 communication (e.g. topics)
     rclpy.init(args = args) 
 
-    milestone_1_node: Milestone1Node = Milestone1Node()
+    milestone_2_node: Milestone2Node = Milestone2Node()
 
     #############################################################################################
     # Start of student code section
@@ -38,10 +38,10 @@ def main(args = None):
     #############################################################################################
     
     # Pause the programm until its killed. All tasks still will be processed in the background.
-    rclpy.spin(milestone_1_node) 
+    rclpy.spin(milestone_2_node) 
 
     # Destroy the node explicitly, otherwise garbage collector should do it.
-    milestone_1_node.destroy_node()
+    milestone_2_node.destroy_node()
 
     # Stops all communication and should always be called last in a node before finishing.
     rclpy.shutdown()
