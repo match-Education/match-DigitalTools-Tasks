@@ -7,7 +7,7 @@ from rclpy.node import Node
 #############################################################################################
 # Start of student import section
 
-from geometry_msgs.msg import Twist
+
 
 # End of student import section
 #############################################################################################
